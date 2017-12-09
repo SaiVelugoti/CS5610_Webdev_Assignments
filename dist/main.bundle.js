@@ -1103,7 +1103,7 @@ var RegisterComponent = (function () {
                 //   });
                 _this.userService.register(_this.username, _this.password)
                     .subscribe(function (data) {
-                    _this.router.navigate(['/login']);
+                    _this.router.navigate(['/profile']);
                 }, function (error) {
                     _this.error = error._body;
                 });
