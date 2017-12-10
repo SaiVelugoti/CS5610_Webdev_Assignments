@@ -4,7 +4,6 @@ import 'rxjs/Rx';
 import {environment} from '../../environments/environment';
 import {Router} from '@angular/router';
 import {SharedService} from './shared.service.client';
-import {send} from "q";
 
 @Injectable()
 export class UserService {

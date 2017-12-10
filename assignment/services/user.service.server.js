@@ -26,6 +26,7 @@ module.exports = function (app) {
   app.post("/api/register", register);
   app.post("/api/loggedIn", loggedin);
   app.delete('/api/deleteAllUsers', deleteAllUsers);
+
   app.get('/facebook/login', passport.authenticate('facebook', {scope: 'email'}));
   app.get('/auth/facebook/callback',
     passport.authenticate('facebook', {
@@ -55,6 +56,7 @@ module.exports = function (app) {
   function logout(req, res) {
     "use strict";
     req.logOut();
+    req.user = '';
     res.send(200);
   }
 
@@ -80,6 +82,8 @@ module.exports = function (app) {
   }
 
   function loggedin(req, res) {
+    console.log('In user - server -> loggedIn');
+    console.log(req.isAuthenticated());
     res.send(req.isAuthenticated() ? req.user : '0');
   }
 

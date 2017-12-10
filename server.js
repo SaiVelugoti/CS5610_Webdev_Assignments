@@ -10,6 +10,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const app = express();
 const passport = require('passport');
+var logout = require('express-passport-logout');
 
 // -- Asgn 6
 const cookieParser = require('cookie-parser');
@@ -21,13 +22,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(cookieParser());
 // app.use(session({ secret: process.env.SESSION_SECRET}));
-app.use(session({secret: 'sai-v', resave: true, saveUninitialized: true}));
+app.use(session({secret: 'sai-v'}));
+// , resave: false, saveUninitialized: true}));
 
 
 app.use(passport.initialize());
 app.use(passport.session());
 // -- Asgn 6
-
 
 
 // Point static path to dist -- For building -- REMOVE
@@ -70,6 +71,6 @@ app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-
-// server.listen(port, () => console.log('Running'));
-server.listen(3000);
+// app.get('/logout', logout());
+// // server.listen(port, () => console.log('Running'));
+// server.listen(3000);

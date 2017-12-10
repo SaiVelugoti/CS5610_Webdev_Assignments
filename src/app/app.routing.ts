@@ -19,10 +19,11 @@ import {FlickrSearchComponent} from './components/widget/widget-edit/widget-imag
 const APP_ROUTES: Routes = [
   { path : '' , component: LoginComponent},
   { path : 'test', component: TestComponent},
-  { path : 'login' , component: LoginComponent},
+  { path : 'login' , component: LoginComponent, canActivate: [AuthGuard]},
   { path : 'register' , component: RegisterComponent},
   // { path : 'user/:userId' , component: ProfileComponent, canActivate: [AuthGuard]},
   { path : 'profile' , component: ProfileComponent, canActivate: [AuthGuard]},
+  { path : 'website' , component: WebsiteListComponent, canActivate: [AuthGuard]},
   { path : 'user/:userId/website' , component: WebsiteListComponent},
   { path : 'user/:userId/website/new' , component: WebsiteNewComponent},
   { path : 'user/:userId/website/:websiteId' , component: WebsiteEditComponent},

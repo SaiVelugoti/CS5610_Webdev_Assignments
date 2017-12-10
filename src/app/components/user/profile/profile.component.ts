@@ -38,12 +38,20 @@ export class ProfileComponent implements OnInit {
   // }
 
   ngOnInit() {
+    console.log('In Profile TS');
     this.user = this.sharedService.user;
+    this.username = this.user['username'];
+    this.firstName = this.user['firstName'];
+    this.lastName = this.user['lastName'];
   }
 
   logout() {
     this.userService.logout()
-      .subscribe((data: any) => this.router.navigate(['/login'])
+      .subscribe((data: any) => {
+          this.user = null;
+          this.sharedService.user = '';
+          this.router.navigate(['/login']);
+        }
       );
   }
 

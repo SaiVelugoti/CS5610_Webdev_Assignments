@@ -17,7 +17,7 @@
 
 <div class="container-fluid">
   <label for="username">Username</label>
-  <input [(ngModel)]="user['username']"
+  <input [(ngModel)]="username"
          name="username"
          id="username"
          placeholder={{username}}
@@ -25,20 +25,20 @@
          readonly>
 
   <label for="firstName">First Name</label>
-  <input [(ngModel)]="user['firstName']"
+  <input [(ngModel)]="firstName"
          name="firstname"
          id="firstName"
          placeholder={{firstName}}
          class="form-control">
 
   <label for="lastName">Last Name</label>
-  <input [(ngModel)]="user['lastName']"
+  <input [(ngModel)]="lastName"
          name="lastname"
          id="lastName"
          placeholder={{lastName}}
          class="form-control">
 
-  <a [routerLink]="['/user', user['_id'], 'website']" class="btn btn-block bg-primary btnStyle">
+  <a [routerLink]="['/website']" class="btn btn-block bg-primary btnStyle">
     Websites
   </a>
   <a [routerLink]="['/login']" class="btn btn-block btn-danger">
