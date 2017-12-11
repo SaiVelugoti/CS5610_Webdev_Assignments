@@ -41,7 +41,7 @@
   <a [routerLink]="['/website']" class="btn btn-block bg-primary btnStyle">
     Websites
   </a>
-  <a [routerLink]="['/login']" class="btn btn-block btn-danger">
+  <a (click)="logout()" class="btn btn-block btn-danger">
     Logout
   </a>
 </div>
