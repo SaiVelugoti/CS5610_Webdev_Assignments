@@ -247,7 +247,7 @@ AppModule = __decorate([
 var APP_ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_2__components_user_login_login_component__["a" /* LoginComponent */] },
     { path: 'test', component: __WEBPACK_IMPORTED_MODULE_1__components_test_test_component__["a" /* TestComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_2__components_user_login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_auth_guard_service__["a" /* AuthGuard */]] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_2__components_user_login_login_component__["a" /* LoginComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_3__components_user_register_register_component__["a" /* RegisterComponent */] },
     // { path : 'user/:userId' , component: ProfileComponent, canActivate: [AuthGuard]},
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_4__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_14__services_auth_guard_service__["a" /* AuthGuard */]] },
@@ -988,8 +988,6 @@ var ProfileComponent = (function () {
         var _this = this;
         this.userService.logout()
             .subscribe(function (data) {
-            _this.user = null;
-            _this.sharedService.user = '';
             _this.router.navigate(['/login']);
         });
     };

@@ -38,25 +38,11 @@ module.exports = function (app) {
     console.log("In login - after local strategy");
     var user = req.user;
     res.json(user);
-    // userModel
-    //   .findUserByUsername(user.username)
-    //   .then(function (userA) {
-    //     if (userA && bcrypt.compareSync(userA['password'], user.password)) {
-    //       return done(null, userA);
-    //     } else {
-    //       return done(null, false);
-    //     }
-    //
-    //   }, function (err) {
-    //     return done(null, false);
-    //
-    //   });
   }
 
   function logout(req, res) {
     "use strict";
     req.logOut();
-    req.user = '';
     res.send(200);
   }
 
@@ -64,7 +50,6 @@ module.exports = function (app) {
     "use strict";
     var user = req.body;
     user.password = bcrypt.hashSync(user.password);
-    // return userModel.createUser(user);
 
    return userModel.createUser(user)
       .then(
@@ -82,8 +67,6 @@ module.exports = function (app) {
   }
 
   function loggedin(req, res) {
-    console.log('In user - server -> loggedIn');
-    console.log(req.isAuthenticated());
     res.send(req.isAuthenticated() ? req.user : '0');
   }
 
@@ -177,17 +160,6 @@ module.exports = function (app) {
         }
       });
     return;
-    // var user;
-    // for (let x = 0; x < users.length; x++) {
-    //   if (users[x]._id === userId) {
-    //     user = users[x];
-    //   }
-    // }
-    // if (user) {
-    //   res.json(user);
-    // } else {
-    //   res.json(null);
-    // }
   }
 
   function updateUser(req, res) {
