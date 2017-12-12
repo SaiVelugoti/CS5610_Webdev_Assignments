@@ -1860,8 +1860,8 @@ var WidgetHtmlComponent = (function () {
     };
     WidgetHtmlComponent.prototype.createEditHeader = function () {
         var _this = this;
-        if (this.widgetname === '' || this.widgettext === '') {
-            this.errMsg = 'Enter all values';
+        if (this.widgetname === '' || this.widgetname === undefined) {
+            this.errMsg = 'Enter name';
             this.errorFlag = true;
         }
         else if (this.widgetRet) {
