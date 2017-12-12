@@ -94,7 +94,7 @@ module.exports = function (app) {
     var size = myFile.size;
     var mimetype = myFile.mimetype;
 
-    var url = 'assets/uploads/' + filename;
+    var url = './uploads/' + filename;
     var width = width;
 
 

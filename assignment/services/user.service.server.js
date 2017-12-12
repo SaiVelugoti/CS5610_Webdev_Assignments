@@ -134,7 +134,7 @@ module.exports = function (app) {
       return;
 
     } else if (username) {
-      userModel
+     return userModel
         .findUserByUsername(username)
         .then(function (user) {
           if (user) {
@@ -143,9 +143,9 @@ module.exports = function (app) {
             res.json(null);
           }
         });
-      return;
+      // return;
     }
-    return res.json({});
+    // return res.json({});
   }
 
   function findUserById(req, res) {

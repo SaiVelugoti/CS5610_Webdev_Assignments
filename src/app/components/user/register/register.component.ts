@@ -48,17 +48,6 @@ export class RegisterComponent implements OnInit {
             username: this.username,
             password: this.password
           };
-          // this.userService.createUser(newUser).subscribe((createdUser: any) => {
-          //   // this.router.navigate(['/user/', createdUser._id]);
-          //   this.router.navigate(['/profile']);
-          // });
-
-          // Asgn 6
-          // this.userService.register(this.username, this.password)
-          //   .subscribe((user) => {
-          //     this.sharedService.user = user;
-          //     this.router.navigate(['/profile']);
-          //   });
 
           this.userService.register(this.username, this.password)
             .subscribe((data: any) => {
